@@ -7,6 +7,11 @@
 
 /* Style Utama */
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font: 27px/36px 'BebasNeue', 'Arial Narrow', Arial, sans-serif;
 	background-color: #ddd;
@@ -19,43 +24,32 @@ h1	{
 	text-shadow: 1px 1px 1px white;
 }
 
-.container {
-	width: 90%;
-	height: auto;
+.gallery {
+	width: 85%;
 	margin: auto;
-	padding: 10px 0px;
+	padding: 7px;
+	padding-right: 14px;
+	padding-bottom: 40px;
 	background-color: white;
 	border-radius: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px,120px));
+	grid-gap: 50px;
+	justify-content: space-between;
 }
 
 .gallery li {
+	margin-top: 20px;
 	width: 120px;
 	height: 120px;
 	border: 3px solid #666;
-	float: left;
 	text-align: center;
-	margin: 10px 48px 40px 30px;
+	list-style: none;
 }
 
 .gallery li a {
 	color: #551A8B;
 	text-decoration: none;
-}
-
-.gallery .build,
-.gallery .material {
-	position: absolute;
-	color: white;
-}
-
-.gallery .build {
-	top: 90%;
-	left: 40%;
-}
-
-.gallery .material {
-	top: 90%;
-	left: 55%;
 }
 
 .overlay {
@@ -89,6 +83,22 @@ h1	{
 	animation: fadeAja 1s;
 }
 
+.gallery .build,
+.gallery .material {
+	position: absolute;
+	color: white;
+}
+
+.build {
+	top: 90%;
+	left: 40%;
+}
+
+.material {
+	top: 90%;
+	left: 55%;
+}
+
 .overlay .close {
 	position: absolute;
 	top: 50px;
@@ -105,10 +115,6 @@ h1	{
 
 .overlay:target .close {
 	animation: slideDownFade .5s .5s forwards;
-}
-
-.clear {
-	clear: both;
 }
 
 /* Animate */
@@ -131,5 +137,21 @@ h1	{
 	100% {
 		opacity: 1;
 		margin-top: 0;
+	}
+}
+
+/* Responsive */
+
+@media( max-width: 862px ) {
+
+	h1 {
+		font-size: 60px;
+	}
+}
+
+@media( max-width: 651px ) {
+
+	h1 {
+		font-size: 40px;
 	}
 }
